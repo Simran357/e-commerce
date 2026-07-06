@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
+import routes from "./routes";
 dotenv.config();
 
 const app = express();
@@ -13,7 +14,7 @@ app.use(
   })
 );
 
-app.use("/api",);
+app.use("/api",routes);
 const PORT = Number(process.env.PORT);
 const DATABASE_URL = process.env.DATABASE_URL;
 if(!PORT || !DATABASE_URL) {
